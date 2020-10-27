@@ -33,6 +33,7 @@ db.inventory.find(
 ).pretty()
 
 
+
 /*
 Los que tienen qty > 45 y < 60
 No funciona con el mismo campo el and implícito
@@ -49,6 +50,22 @@ Con and explícito, con el operador $and
 db.inventory.find({
     $and: [ {qty: {$lt: 60}}, {qty: {$gt: 45}}]    
 }).pretty()
+
+
+/*
+Me devuelve el documento:
+{
+        "_id" : ObjectId("5f9817f7a08505f9256ffcaa"),
+        "item" : "notebook",
+        "qty" : 50,
+        "size" : {
+                "h" : 8.5,
+                "w" : 11,
+                "uom" : "in"
+        },
+        "status" : "A"
+}
+*/
 
 /*
 Los que tienen qty > 45 y < 60
